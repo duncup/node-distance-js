@@ -1,0 +1,22 @@
+{
+  "name": "distance-js",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duncup/node-distance-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/duncup/node-distance-js/issues"
+  },
+  "homepage": "https://github.com/duncup/node-distance-js#readme",
+  "description": ""
+}
