@@ -17,7 +17,7 @@ function rad(d) {
  * @param lat2 第二点的纬度
  * @return 返回的距离，单位m
  * */
-function LantitudeLongitudeDist(lon1, lat1, lon2, lat2) {
+function distance(lon1, lat1, lon2, lat2) {
   let radLat1 = rad(lat1);
   let radLat2 = rad(lat2);
 
@@ -52,4 +52,4 @@ function LantitudeLongitudeDist(lon1, lat1, lon2, lat2) {
 }
 
 
-exports.count = LantitudeLongitudeDist
+exports.count = distance
