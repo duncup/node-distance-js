@@ -4,7 +4,7 @@ This package is a distance of coordinates module.
 
 ###demo
 ```js
-const distance = require('../index');
+const distance = require('distance-js');
 let result = distance.distance(longitude1, latitude1, longitude2, latitude2);
 ```
 
