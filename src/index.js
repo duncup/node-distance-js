@@ -45,7 +45,7 @@ function distance(lon1, lat1, lon2, lat2) {
   let z2 = EARTH_RADIUS * Math.cos(radLat2);
 
   let d = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2) + (z1 - z2) * (z1 - z2));
-  //余弦定理求夹角
+  //Cosine theorem for angle
   let theta = Math.acos((EARTH_RADIUS * EARTH_RADIUS + EARTH_RADIUS * EARTH_RADIUS - d * d) / (2 * EARTH_RADIUS * EARTH_RADIUS));
   let dist = theta * EARTH_RADIUS;
   return parseInt(dist);
