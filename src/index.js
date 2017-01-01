@@ -3,19 +3,19 @@
 const EARTH_RADIUS = 6378137
 
 /**
- * 转化为弧度(rad)
+ * Convert to radians
  * */
 function rad(d) {
   return d * Math.PI / 180.0;
 }
 
 /**
- * 基于余弦定理求两经纬度距离
- * @param lon1 第一点的经度
- * @param lat1 第一点的纬度
- * @param lon2 第二点的经度
- * @param lat2 第二点的纬度
- * @return 返回的距离，单位m
+ * Determination of Two Longitude and Longitude Distance Based on Cosine Theorem
+ * @param lon1 longitude of first point
+ * @param lat1 latitude of first point
+ * @param lon2 longitude of second point
+ * @param lat2 latitude of second point
+ * @return distance of meter
  * */
 function distance(lon1, lat1, lon2, lat2) {
   let radLat1 = rad(lat1);
