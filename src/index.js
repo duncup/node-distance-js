@@ -9,6 +9,26 @@ function rad(d) {
   return d * Math.PI / 180.0;
 }
 
+
+function getLat(lat) {
+  lat = rad(lat);
+
+  if (lat < 0)
+    lat = Math.PI / 2 + Math.abs(lat); // south
+  if (lat > 0)
+    lat = Math.PI / 2 - Math.abs(lat); // north
+
+  return lat
+}
+
+function getLon(lon) {
+  lon = rad(lon);
+
+  if (lon < 0)
+    lon = Math.PI * 2 - Math.abs(lon); // west
+  return lon
+}
+
 /**
  * Determination of Two Longitude and Longitude Distance Based on Cosine Theorem
  * @param lon1 longitude of first point
@@ -18,24 +38,13 @@ function rad(d) {
  * @return distance of meter
  * */
 function distance(lon1, lat1, lon2, lat2) {
-  let radLat1 = rad(lat1);
-  let radLat2 = rad(lat2);
 
-  let radLon1 = rad(lon1);
-  let radLon2 = rad(lon2);
+  let radLat1 = getLat(lat1)
+  let radLon1 = getLon(lon1)
 
-  if (radLat1 < 0)
-    radLat1 = Math.PI / 2 + Math.abs(radLat1); // south
-  if (radLat1 > 0)
-    radLat1 = Math.PI / 2 - Math.abs(radLat1); // north
-  if (radLon1 < 0)
-    radLon1 = Math.PI * 2 - Math.abs(radLon1); // west
-  if (radLat2 < 0)
-    radLat2 = Math.PI / 2 + Math.abs(radLat2); // south
-  if (radLat2 > 0)
-    radLat2 = Math.PI / 2 - Math.abs(radLat2); // north
-  if (radLon2 < 0)
-    radLon2 = Math.PI * 2 - Math.abs(radLon2); // west
+  let radLat2 = getLat(lat2)
+  let radLon2 = getLon(lon2)
+
   let x1 = EARTH_RADIUS * Math.cos(radLon1) * Math.sin(radLat1);
   let y1 = EARTH_RADIUS * Math.sin(radLon1) * Math.sin(radLat1);
   let z1 = EARTH_RADIUS * Math.cos(radLat1);
